@@ -1,16 +1,20 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
-import { BrowserRouter, Link } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import { normalize } from "polished"
+import { NationalityLink } from "./NationalityLink"
 import { Router } from "./Router"
 
 const GlobalStyle = createGlobalStyle`
  ${normalize()}
   body {
-    background-image: url("public/background.png") ;
+    background-image: url("/public/background.png") ;
     background-size: cover;
     color: white;
     padding: 0 2em;
+  }
+  a {
+    color: white;
   }
 `
 
@@ -25,9 +29,9 @@ export const App = () => (
     <GlobalStyle />
     <HeaderDiv>
       <h1>Address Book</h1>
-      <Link to="/settings">
+      <NationalityLink to="/settings">
         <h1>Settings</h1>
-      </Link>
+      </NationalityLink>
     </HeaderDiv>
     <main>
       <Router />
