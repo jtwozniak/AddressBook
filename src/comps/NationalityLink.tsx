@@ -12,6 +12,5 @@ export const getNationalityLink = (nationality: string, to: string) =>
 export const NationalityLink = ({ to, children }: Props) => {
   const nationality = useNationality()
   const link = getNationalityLink(nationality, to)
-  console.log("Link", link)
   return <Link to={link}>{children}</Link>
 }

@@ -1,4 +1,10 @@
-import React from "react"
+import React, {
+  UIEventHandler,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+} from "react"
 import styled from "styled-components"
 import { User } from "../api/user"
 import { LoadingRow } from "./LoadingRow"
@@ -27,14 +33,28 @@ type Props = {
 }
 
 export const Table = ({ rows, fetchMorData }: Props) => {
+  const ref = useRef<HTMLTableSectionElement>()
+
+  const checkIfLoadData = useCallback(
+    ({ currentTarget: { scrollHeight, scrollTop, clientHeight } }: any) => {
+      if (scrollHeight - scrollTop - clientHeight === 0) {
+        fetchMorData()
+      }
+    },
+    []
+  )
+
+  useLayoutEffect(() => {
+    checkIfLoadData({ currentTarget: ref.current })
+  }, [rows])
   return (
     <Div>
       <StyledTable>
-        <Tbody>
+        <Tbody ref={ref} onScroll={checkIfLoadData}>
           {rows.map((user) => (
             <Row key={user.cell} {...user} />
           ))}
-          <LoadingRow key="loading" onVisible={fetchMorData} />
+          <LoadingRow key="loading" />
         </Tbody>
       </StyledTable>
     </Div>

@@ -1,36 +1,8 @@
-import React, { useEffect, useRef, useState } from "react"
+import React from "react"
 
-type Props = {
-  onVisible: () => void
-}
-
-export const LoadingRow = ({ onVisible }: Props) => {
-  const ref = useRef()
-  const [isIntersecting, setIsIntersecting] = useState(false)
-  useEffect(() => {
-    const options = {
-      root: ref.current,
-      rootMargin: "0px",
-      threshold: 1.0,
-    }
-
-    const observer = new IntersectionObserver(([{ isIntersecting }]) => {
-      setIsIntersecting(isIntersecting)
-    }, options)
-
-    return () => {
-      observer.disconnect()
-    }
-  })
-
-  useEffect(() => {
-    if (isIntersecting) {
-      onVisible()
-    }
-  }, [isIntersecting])
-
+export const LoadingRow = () => {
   return (
-    <tr ref={ref}>
+    <tr>
       <td>Loading animation?...</td>
     </tr>
   )

@@ -4,6 +4,5 @@ export const useNationality = () => {
   const { nationality, ...rest } = useParams<{ nationality: string }>()
   const history = useHistory()
 
-  console.log("Params", nationality, rest, history.location)
   return nationality
 }

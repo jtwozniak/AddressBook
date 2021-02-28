@@ -2,11 +2,16 @@ const UserPerRequest = 50
 const MaxUsers = 1000
 const LastPage = MaxUsers / UserPerRequest
 
-export const fetchUsers = async (nat: string, page: number) => {
+export const fetchUsers = async (
+  nat: string,
+  page: number
+): Promise<User[]> => {
   // const paramsObject =
 
   if (page > LastPage) {
-    return []
+    return new Promise((resolve, reject) => {
+      resolve([] as User[])
+    })
   }
 
   const params = new URLSearchParams({
@@ -19,14 +24,13 @@ export const fetchUsers = async (nat: string, page: number) => {
     params.append("nat", nat)
   }
 
-  console.log("params", params.toString())
+  console.log("Api call", nat, page)
 
   // This could by typed better, but there is not point to do that here
   // usually there would be a way of generating types from API - like from swagger or graphql
   const data: any = await fetch(
     `https://randomuser.me/api/?${params.toString()}`
   ).then((data) => data.json())
-  console.log("Data", data)
   const users = data.results.map(
     ({
       picture: { thumbnail: picture },
@@ -35,10 +39,16 @@ export const fetchUsers = async (nat: string, page: number) => {
       phone,
       cell,
       location: { street, city, state, postcode },
-    }: any) => ({})
+    }: any) => ({
+      picture,
+      name,
+      email,
+      phone,
+      cell,
+      location: { street, city, state, postcode },
+    })
   )
 
-  console.log("Usrs", users)
   return users
 }
 
