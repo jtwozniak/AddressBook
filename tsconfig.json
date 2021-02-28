@@ -1,10 +1,15 @@
 {
-  "outDir": "./dist/",
-  "noImplicitAny": true,
-  "module": "es6",
-  "target": "es5",
-  "jsx": "react",
-  "allowJs": true,
-  "sourceMap": true
-}
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["esnext", "dom"],
+    "module": "commonjs",
+    "noEmit": true,   // I use that option to run watcher that will not generate transformed files, it is reverted in webpack config
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "es5",
+    "downlevelIteration": true
+  }
 }
