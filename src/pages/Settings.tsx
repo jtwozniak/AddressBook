@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { useHistory } from "react-router-dom"
 import { Button } from "../comps/Button"
 import { getNationalityLink, NationalityLink } from "../comps/NationalityLink"
-import { NationalitySelect } from "../comps/NationalitySelect"
+import { NationalitySelect, OptionsMap } from "../comps/NationalitySelect"
 import { useNationality } from "../comps/useNationality"
 
 const H2 = styled.h2`
@@ -18,14 +18,20 @@ export const Settings = () => {
   const history = useHistory()
 
   const onApply = useCallback(() => {
-    history.push(getNationalityLink(nationality, "/settings"))
+    history.push(
+      getNationalityLink(
+        // this is done to maintain no param in url when All is selected
+        OptionsMap.All === nationality ? null : nationality,
+        "/settings"
+      )
+    )
   }, [nationality])
 
   return (
     <>
       <H2>
         Select nationality:
-        <NationalitySelect onChange={setNationality} />
+        <NationalitySelect value={nationality} onChange={setNationality} />
         <Button onChange={onApply}>Apply</Button>
       </H2>
       <H2>

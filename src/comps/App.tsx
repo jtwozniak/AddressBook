@@ -27,14 +27,6 @@ const HeaderDiv = styled.div`
 export const App = () => (
   <BrowserRouter>
     <GlobalStyle />
-    <HeaderDiv>
-      <h1>Address Book</h1>
-      <NationalityLink to="/settings">
-        <h1>Settings</h1>
-      </NationalityLink>
-    </HeaderDiv>
-    <main>
-      <Router />
-    </main>
+    <Router />
   </BrowserRouter>
 )

@@ -6,8 +6,8 @@ const Select = styled.select`
   ${darkStyle}
 `
 
-const OptionsMap = {
-  0: "All",
+export const OptionsMap = {
+  All: "All",
   CH: "Swiss",
   ES: "Spanish",
   FR: "French",
@@ -15,23 +15,23 @@ const OptionsMap = {
 }
 
 type Props = {
+  value: string
   onChange: (n: string) => void
 }
 
-export const NationalitySelect = ({ onChange }: Props) => {
-  return (
-    <Select
-      name="Nationality"
-      id="nationality"
-      onChange={({
-        currentTarget: { value },
-      }: React.SyntheticEvent<HTMLSelectElement>) => onChange(value)}
-    >
-      {Object.entries(OptionsMap).map(([symbol, nationality]) => (
-        <option key={symbol} value={symbol}>
-          {nationality}
-        </option>
-      ))}
-    </Select>
-  )
-}
+export const NationalitySelect = ({ value, onChange }: Props) => (
+  <Select
+    name="Nationality"
+    id="nationality"
+    value={value}
+    onChange={({
+      currentTarget: { value },
+    }: React.SyntheticEvent<HTMLSelectElement>) => onChange(value)}
+  >
+    {Object.entries(OptionsMap).map(([symbol, nationality]) => (
+      <option key={symbol} value={symbol}>
+        {nationality}
+      </option>
+    ))}
+  </Select>
+)

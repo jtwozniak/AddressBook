@@ -1,5 +1,6 @@
 import React from "react"
+import { PageLayout } from "../comps/PageLayout"
 
 export const Home = () => {
-  return <div>Home</div>
+  return <PageLayout>Home</PageLayout>
 }
