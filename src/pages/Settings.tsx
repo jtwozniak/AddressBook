@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom"
 import { Button } from "../comps/Button"
 import { getNationalityLink, NationalityLink } from "../comps/NationalityLink"
 import { NationalitySelect, OptionsMap } from "../comps/NationalitySelect"
+import { PageLayout } from "../comps/PageLayout"
 import { useNationality } from "../comps/useNationality"
 
 const H2 = styled.h2`
@@ -28,7 +29,7 @@ export const Settings = () => {
   }, [nationality])
 
   return (
-    <>
+    <PageLayout>
       <H2>
         Select nationality:
         <NationalitySelect value={nationality} onChange={setNationality} />
@@ -37,6 +38,6 @@ export const Settings = () => {
       <H2>
         <NationalityLink to={"/"}>Back to main page</NationalityLink>
       </H2>
-    </>
+    </PageLayout>
   )
 }

@@ -12,16 +12,17 @@ const GlobalStyle = createGlobalStyle`
     background-size: cover;
     color: white;
     padding: 0 2em;
+    height: 100vh;
+    width: 100vh;
+    overflow: hidden;
   }
   a {
     color: white;
   }
-`
-
-const HeaderDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  thead, 
+  tbody { 
+    display: block; 
+  }
 `
 
 export const App = () => (
