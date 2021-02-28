@@ -1,20 +1,10 @@
 const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   entry: "./src/index.tsx",
   devtool: "inline-source-map",
   module: {
-    /*
-
-    rules: [
-      { test: /\.vue$/, loader: "vue-loader" },
-      {
-        test: /\.ts$/,
-        loader: "ts-loader",
-        options: { appendTsSuffixTo: [/\.vue$/] }
-      }
-    ]
-     */
     rules: [
       {
         test: /\.tsx?$/,
@@ -35,4 +25,9 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve("./src/index.html"),
+    }),
+  ],
 }
