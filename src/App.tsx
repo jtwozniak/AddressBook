@@ -1,2 +1,4 @@
-import * as React from "react"
-export const App = () => <h1>AddressBook</h1>
+import React from "react"
+import { PageLayout } from "./comps/PageLayout"
+
+export const App = () => <PageLayout></PageLayout>
