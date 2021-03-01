@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { useNationality } from "./useNationality"
+import { useNationality } from "../../comps/useNationality"
 
 type Props = React.PropsWithChildren<{
   to: string

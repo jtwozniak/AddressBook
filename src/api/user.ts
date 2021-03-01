@@ -15,6 +15,7 @@ export const fetchUsers = async (
   }
 
   const params = new URLSearchParams({
+    page: String(page),
     results: String(UserPerRequest),
     inc: ["picture", "name", "email", "location", "phone", "cell"].join(","), // download only required fields
     seed: "Sherpany",

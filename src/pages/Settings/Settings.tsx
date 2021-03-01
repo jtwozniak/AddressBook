@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from "react"
 import styled from "styled-components"
 import { useHistory } from "react-router-dom"
-import { Button } from "../comps/Button"
-import { getNationalityLink, NationalityLink } from "../comps/NationalityLink"
-import { NationalitySelect, OptionsMap } from "../comps/NationalitySelect"
-import { PageLayout } from "../comps/PageLayout"
-import { useNationality } from "../comps/useNationality"
+import { Button } from "./Button"
+import { getNationalityLink, NationalityLink } from "./NationalityLink"
+import { NationalitySelect, OptionsMap } from "./NationalitySelect"
+import { PageLayout } from "../../comps/PageLayout"
+import { useNationality } from "../../comps/useNationality"
 
 const H2 = styled.h2`
   align-content: center;

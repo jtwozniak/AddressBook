@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler } from "react"
 import styled from "styled-components"
-import { darkStyle } from "./styleHelper"
+import { darkStyle } from "../../comps/styleHelper"
 
 const Select = styled.select`
   ${darkStyle}

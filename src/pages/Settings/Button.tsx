@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { darkStyle } from "./styleHelper"
+import { darkStyle } from "../../comps/styleHelper"
 
 const StyledButton = styled.button`
   ${darkStyle}

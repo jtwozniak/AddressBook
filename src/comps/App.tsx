@@ -2,7 +2,7 @@ import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
 import { BrowserRouter } from "react-router-dom"
 import { normalize } from "polished"
-import { NationalityLink } from "./NationalityLink"
+import { NationalityLink } from "../pages/Settings/NationalityLink"
 import { Router } from "./Router"
 
 const GlobalStyle = createGlobalStyle`
@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
     color: white;
     padding: 0 2em;
     height: 100vh;
-    width: 100vh;
     overflow: hidden;
   }
   a {

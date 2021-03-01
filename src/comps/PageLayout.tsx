@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { NationalityLink } from "./NationalityLink"
+import { NationalityLink } from "../pages/Settings/NationalityLink"
 
 const HeaderDiv = styled.div`
   display: flex;
@@ -12,6 +12,7 @@ const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
 `
 
 const Main = styled.main`
