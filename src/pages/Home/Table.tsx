@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useRef } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import { User } from "../../api/user"
-import { LoadingRow } from "./LoadingRow"
+import { DetailsModal } from "./DetailsModal"
+import { Footer } from "./LoadingRow"
 import { Row } from "./Row"
 
 const Div = styled.div`
@@ -12,7 +13,6 @@ const Div = styled.div`
 `
 
 const Tbody = styled.tbody`
-  width: 100%;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -23,17 +23,20 @@ const Tbody = styled.tbody`
 `
 
 const StyledTable = styled.table`
-  width: 100%;
   height: 100%;
+  width: 1000px;
+  align-self: center;
 `
 
 type Props = {
   loading: boolean
+  noMoreData: boolean
   rows: User[]
   fetchMoreData: () => void
 }
 
-export const Table = ({ rows, fetchMoreData, loading }: Props) => {
+export const Table = ({ rows, fetchMoreData, loading, noMoreData }: Props) => {
+  const [modalUser, setModalUser] = useState<User>(null)
   const ref = useRef<HTMLTableSectionElement>()
 
   const checkIfLoadData = useCallback(
@@ -50,19 +53,26 @@ export const Table = ({ rows, fetchMoreData, loading }: Props) => {
   useEffect(() => {
     checkIfLoadData({ currentTarget: ref.current })
   }, [rows, fetchMoreData])
+
   return (
     <Div>
       <Div>
         <StyledTable>
           <Tbody ref={ref} onScroll={checkIfLoadData}>
             {rows.map((user) => (
-              <Row key={user.cell} {...user} />
+              <Row key={user.cell} {...user} setModalUser={setModalUser} />
             ))}
           </Tbody>
         </StyledTable>
       </Div>
-
-      <LoadingRow key="loading rows" loading={loading} />
+      {!!modalUser && (
+        <DetailsModal
+          user={modalUser}
+          closeModal={() => {
+            setModalUser(null)
+          }}
+        />
+      )}
     </Div>
   )
 }

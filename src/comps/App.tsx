@@ -1,8 +1,7 @@
 import React from "react"
-import styled, { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components"
 import { BrowserRouter } from "react-router-dom"
 import { normalize } from "polished"
-import { NationalityLink } from "../pages/Settings/NationalityLink"
 import { Router } from "./Router"
 
 const GlobalStyle = createGlobalStyle`

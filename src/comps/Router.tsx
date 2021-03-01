@@ -8,7 +8,7 @@ export const Router = () => {
     <Switch>
       <Route exact path="/settings" component={Settings} />
       <Route exact path="/:nationality/settings" component={Settings} />
-      <Route path="/:nationality" strict={false} component={Home} />
+      <Route path="/:nationality?" component={Home} />
     </Switch>
   )
 }

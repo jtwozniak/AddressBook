@@ -1,8 +1,3 @@
-import { useHistory, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
-export const useNationality = () => {
-  const { nationality, ...rest } = useParams<{ nationality: string }>()
-  const history = useHistory()
-
-  return nationality
-}
+export const useNationality = () => useParams<{ nationality: string }>()

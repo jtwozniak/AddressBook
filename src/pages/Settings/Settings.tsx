@@ -14,7 +14,7 @@ const H2 = styled.h2`
 `
 
 export const Settings = () => {
-  const initialNationality = useNationality()
+  const { nationality: initialNationality } = useNationality()
   const [nationality, setNationality] = useState(initialNationality)
   const history = useHistory()
 

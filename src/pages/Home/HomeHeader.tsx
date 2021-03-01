@@ -10,9 +10,11 @@ const Div = styled.div`
 const MainDiv = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 1000px;
   justify-content: space-between;
   padding-bottom: 2em;
+
+  align-self: center;
 
   h3 {
     display: inline-block;

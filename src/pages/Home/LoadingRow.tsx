@@ -27,8 +27,14 @@ const Div = styled.div`
 
 type Props = {
   loading: boolean
+  noMoreData: boolean
 }
 
-export const LoadingRow = ({ loading }: Props) => {
-  return <Div>{loading && <Loading />}</Div>
+export const Footer = ({ loading, noMoreData }: Props) => {
+  return (
+    <Div>
+      {loading && <Loading />}
+      {noMoreData && "Downlaoded whole users catalog"}
+    </Div>
+  )
 }

@@ -1,5 +1,5 @@
 const UserPerRequest = 50
-const MaxUsers = 1000
+const MaxUsers = 1000 // users limit, api support up to 5000
 const LastPage = MaxUsers / UserPerRequest
 
 export const fetchUsers = async (
@@ -58,7 +58,10 @@ export type User = {
   name: { title: string; first: string; last: string } // Code test have error, the field username doesn't exist - I assume title instead
   email: string
   location: {
-    street: string
+    street: {
+      name: string
+      number: number
+    }
     city: string
     state: string
     postcode: number
