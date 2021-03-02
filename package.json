@@ -28,6 +28,11 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@types/jest": "^26.0.20",
     "@types/lodash": "^4.14.168",
@@ -35,6 +40,7 @@
     "@types/react-dom": "^17.0.1",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.7",
+    "babel-jest": "^26.6.3",
     "copy-webpack-plugin": "^7.0.0",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",

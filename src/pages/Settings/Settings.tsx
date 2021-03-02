@@ -21,7 +21,7 @@ export const Settings = () => {
   const onApply = useCallback(() => {
     history.push(
       getNationalityLink(
-        // this is done to maintain no param in url when All is selected
+        // null is set to maintain no param in url when All is selected
         OptionsMap.All === nationality ? null : nationality,
         "/settings"
       )
