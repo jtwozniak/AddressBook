@@ -20,6 +20,7 @@ export const Row = ({ setModalUser, ...user }: Props) => {
 
   return (
     <Tr
+      data-testid="row"
       key={user.cell}
       $mouseOver={mouseOver}
       onMouseOver={() => {
