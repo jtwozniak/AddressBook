@@ -11,7 +11,7 @@ type Props = React.PropsWithChildren<{
 }>
 
 export const Button = ({ children, onChange }: Props) => (
-  <StyledButton type="button" onClick={onChange}>
+  <StyledButton type="button" data-testid="apply-button" onClick={onChange}>
     {children}
   </StyledButton>
 )

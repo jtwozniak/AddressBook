@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row hover style test 1`] = `
+.c0 {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+<div>
+  <tr
+    class="c0"
+  >
+    <td>
+      <img
+        src="thumbnail"
+      />
+    </td>
+    <td>
+      title
+    </td>
+    <td>
+      first
+    </td>
+    <td>
+      last
+    </td>
+    <td>
+      string
+    </td>
+  </tr>
+</div>
+`;

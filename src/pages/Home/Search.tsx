@@ -27,6 +27,8 @@ export const Search = ({ onChange }: Props) => {
       <h3>Search:</h3>
       <Input
         type="search"
+        aria-label="search-input"
+        data-testid="search-input"
         onChange={({
           currentTarget: { value },
         }: React.SyntheticEvent<HTMLInputElement>) => {

@@ -22,14 +22,15 @@ type Props = {
 export const NationalitySelect = ({ value, onChange }: Props) => (
   <Select
     name="Nationality"
-    id="nationality"
+    id="nationality-select"
+    data-testid="nationality-select"
     value={value}
     onChange={({
       currentTarget: { value },
     }: React.SyntheticEvent<HTMLSelectElement>) => onChange(value)}
   >
     {Object.entries(OptionsMap).map(([symbol, nationality]) => (
-      <option key={symbol} value={symbol}>
+      <option data-testid="nationality-option" key={symbol} value={symbol}>
         {nationality}
       </option>
     ))}

@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homeheader snapshot 1`] = `
+.c1 {
+  margin: 0 1em;
+  width: 250px;
+  background-color: #042653;
+  color: white;
+  border-radius: 3px;
+  border-color: red;
+  height: 35px;
+}
+
+.c1:focus {
+  border-color: red;
+  box-shadow: 0 0 20px red;
+  outline: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 1000px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 2em;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c0 h3 {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <span>
+      <h3>
+        Search:
+      </h3>
+      <input
+        aria-label="search-input"
+        class="c1"
+        data-testid="search-input"
+        type="search"
+      />
+    </span>
+    <div
+      class="c2"
+    >
+      <h3>
+        Filtered users: 
+        5
+      </h3>
+      <h3>
+        Fetched users: 
+        10
+      </h3>
+      <h3>
+        Pages: 
+        1
+      </h3>
+    </div>
+  </div>
+</div>
+`;

@@ -34,7 +34,7 @@ export const Footer = ({ loading, noMoreData }: Props) => {
   return (
     <Div>
       {loading && <Loading />}
-      {noMoreData && "Downlaoded whole users catalog"}
+      {noMoreData && "Downloaded whole users catalog"}
     </Div>
   )
 }

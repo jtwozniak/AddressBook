@@ -12,5 +12,10 @@ export const getNationalityLink = (nationality: string, to: string) =>
 export const NationalityLink = ({ to, children }: Props) => {
   const { nationality } = useNationality()
   const link = getNationalityLink(nationality, to)
-  return <Link to={link}>{children}</Link>
+
+  return (
+    <Link data-testid="link" to={link}>
+      {children}
+    </Link>
+  )
 }
