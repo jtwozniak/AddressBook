@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import { User } from "../../api/user"
 import { DetailsModal } from "./DetailsModal"
-import { Footer } from "./LoadingRow"
 import { Row } from "./Row"
 
 const Div = styled.div`

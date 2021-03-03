@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import React, { useCallback, useMemo, useState } from "react"
 import styled from "styled-components"
 import { fetchUsers, User } from "../../api/user"
 import { PageLayout } from "../../comps/PageLayout"
@@ -11,16 +11,6 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-`
-const DivH3 = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: flex-start;
-
-  h3 {
-    margin-right: 2em;
-  }
 `
 
 export const Home = () => {
@@ -45,7 +35,6 @@ export const Home = () => {
 
         if (!newUsers.length) {
           setNoMoreData(true)
-        } else {
         }
         setLoading(false)
       }

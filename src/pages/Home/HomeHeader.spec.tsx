@@ -1,5 +1,5 @@
 import React from "react"
-import { render, act, fireEvent } from "@testing-library/react"
+import { render, fireEvent } from "@testing-library/react"
 import { HomeHeader } from "./HomeHeader"
 
 describe("Homeheader", () => {
