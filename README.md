@@ -27,3 +27,8 @@ Everythin you see is setup from the scratch without any helpers except
 > tsc --init
 
 I didn't prepare building of the project, but I believe this is not necessary here.
+
+I added some extra counters to tract what is going on in the app.
+I hope that they will not be misread, as the code is doing prefetching well.
+It can be nicely observed by slowing down network in dev tools.
+New rest call is made when user will scroll to the bottom of the table. At that moment prefetched users will be joined to the users. I should be clear from the code.
